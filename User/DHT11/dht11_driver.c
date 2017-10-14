@@ -43,7 +43,7 @@ void DHT11_IO_OUT(void)
 	GPIO_Init(GPIO_PORT_DHT11, &GPIO_InitStruct);
 }
 
-/**开始
+/**开始信号
 	返回 0-- 失败
 		 1-- 成功
 */
@@ -76,12 +76,14 @@ u8 DHT11_Start(void)
 	else 
 		return 1;
 }
-
+/*
+	读一位
+*/
 u8 ReadBit(void)
 {
 	u8 wait = 0;
 
-	while((GPIO_ReadInputDataBit(GPIO_PORT_DHT11, GPIO_PIN_DHT11)==1) && wait<60)
+	while((GPIO_ReadInputDataBit(GPIO_PORT_DHT11, GPIO_PIN_DHT11)==1) && wait<50)
 	{
 		wait++;
 		delay_us(1);
@@ -99,7 +101,9 @@ u8 ReadBit(void)
 	else 
 		return 0;
 }
-
+/*
+	读一个字节
+*/
 u8 ReadByte(void)
 {
 	u8 i = 0;
@@ -113,6 +117,9 @@ u8 ReadByte(void)
 	return byte;
 }
 
+/*
+	读一次数据
+*/
 u8 ReadDat(u8 *temp,u8 *humidity)
 {
 	u8 i = 0;
