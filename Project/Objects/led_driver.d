@@ -1,6 +1,5 @@
 .\objects\led_driver.o: ..\User\LED\led_driver.c
 .\objects\led_driver.o: ..\User\LED\led_driver.h
-.\objects\led_driver.o: ..\Libaries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h
 .\objects\led_driver.o: ..\Libaries\CMSIS\stm32f10x.h
 .\objects\led_driver.o: C:\Keil_v5\ARM\CMSIS\Include\core_cm3.h
 .\objects\led_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -33,3 +32,4 @@
 .\objects\led_driver.o: ..\Libaries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 .\objects\led_driver.o: ..\Libaries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\led_driver.o: ..\Libaries\STM32F10x_StdPeriph_Driver\inc\misc.h
+.\objects\led_driver.o: ..\User\SysTick\SysTick.h

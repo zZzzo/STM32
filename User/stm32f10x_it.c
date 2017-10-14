@@ -23,6 +23,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
+#include "usart_driver.h"
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
@@ -152,6 +153,66 @@ void SysTick_Handler(void)
 {
 }*/
 
+uint8_t ch = 0;
+void USART1_IRQHandler(void)
+{
+	if(USART_GetITStatus(USART1,USART_IT_RXNE) == SET)
+	{
+		USART_ClearITPendingBit(USART1,USART_IT_RXNE);
+//		ch = USART_ReceiveData(USART1);
+		ch = USART1->DR;
+		usart1_putc(ch);
+		printf("\r\nUSART1_IRQHandler\r\n");
+	}
+}
+
+void TIM2_IRQHandler(void)
+{
+//	static int i = 0;
+	//判断是否为TIM_IT_Update事件
+	if(TIM_GetITStatus(TIM2,TIM_IT_Update) == SET)
+	{
+		//清空中断挂起位 TIM_IT_Update
+		TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
+	//	printf("%ds\r\n",i++);
+	}
+}
+
+void EXTI0_IRQHandler(void)
+{
+	if(EXTI_GetITStatus(EXTI_Line0) == SET)
+	{
+		EXTI_ClearITPendingBit(EXTI_Line0);
+		printf("EXTI0\r\n");
+	}
+}	
+
+void EXTI1_IRQHandler(void)
+{
+	if(EXTI_GetITStatus(EXTI_Line1) == SET)
+	{
+		EXTI_ClearITPendingBit(EXTI_Line1);
+		printf("EXTI1\r\n");
+	}
+}	
+
+void EXTI2_IRQHandler(void)
+{
+	if(EXTI_GetITStatus(EXTI_Line2) == SET)
+	{
+		EXTI_ClearITPendingBit(EXTI_Line2);
+		printf("EXTI2\r\n");
+	}
+}	
+
+void EXTI3_IRQHandler(void)
+{
+	if(EXTI_GetITStatus(EXTI_Line3) == SET)
+	{
+		EXTI_ClearITPendingBit(EXTI_Line3);
+		printf("EXTI3\r\n");
+	}
+}	
 /**
   * @}
   */ 

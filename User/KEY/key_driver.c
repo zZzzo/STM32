@@ -1,6 +1,7 @@
 #include "key_driver.h"
 #include "SysTick.h"
 #include "led_driver.h"
+#include "usart_driver.h"
 
 /*********************************************
 **初始化按键
@@ -40,6 +41,7 @@ __KEY_TYPE Get_KeyType(void)
 		}	
 	}
 
+	
 	if(!GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_1))
 	{
 		Key_delay();
@@ -71,7 +73,7 @@ __KEY_TYPE Get_KeyType(void)
 	}
 	return NO_KEY;
 }
-
+#if 0
 /*********************************************
 **按键扫描
 *********************************************/
@@ -109,7 +111,7 @@ void Key_Scan(__KEY_TYPE key_type)
 
 }
 
-
+#endif
 
 
 

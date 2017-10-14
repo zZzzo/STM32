@@ -186,7 +186,7 @@
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -334,7 +334,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libaries\CMSIS;..\Libaries\STM32F10x_StdPeriph_Driver\inc;..\User;..\User\LED;..\User\KEY;..\User\SysTick;..\User\RCC</IncludePath>
+              <IncludePath>..\Libaries\CMSIS;..\Libaries\STM32F10x_StdPeriph_Driver\inc;..\User;..\User\LED;..\User\KEY;..\User\SysTick;..\User\RCC;..\User\USART;..\User\ST_string;..\User\TIM;..\User\EXTI;..\User\I2C;..\User\EEPROM;..\User\SPI;..\User\OLED;..\User\ADC;..\User\DHT11</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -535,6 +535,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>ST_String</GroupName>
+          <Files>
+            <File>
+              <FileName>ST_string.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\ST_string\ST_string.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>LED</GroupName>
           <Files>
             <File>
@@ -555,17 +565,107 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>User</GroupName>
+          <GroupName>USART</GroupName>
           <Files>
             <File>
-              <FileName>stm32f10x_it.c</FileName>
+              <FileName>usart_driver.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\stm32f10x_it.c</FilePath>
+              <FilePath>..\User\USART\usart_driver.c</FilePath>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>TIM</GroupName>
+          <Files>
+            <File>
+              <FileName>tim_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\TIM\tim_driver.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>EXTI</GroupName>
+          <Files>
+            <File>
+              <FileName>exti_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\EXTI\exti_driver.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>I2C</GroupName>
+          <Files>
+            <File>
+              <FileName>i2c_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\I2C\i2c_driver.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>EEPROM</GroupName>
+          <Files>
+            <File>
+              <FileName>eeprom.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\EEPROM\eeprom.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>SPI</GroupName>
+          <Files>
+            <File>
+              <FileName>spi_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\SPI\spi_driver.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>OLED</GroupName>
+          <Files>
+            <File>
+              <FileName>oled_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\OLED\oled_driver.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>ADC</GroupName>
+          <Files>
+            <File>
+              <FileName>adc_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\ADC\adc_driver.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>DHT11</GroupName>
+          <Files>
+            <File>
+              <FileName>dht11_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\DHT11\dht11_driver.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>User</GroupName>
+          <Files>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_it.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\stm32f10x_it.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -576,6 +676,11 @@
               <FileName>Readme.txt</FileName>
               <FileType>5</FileType>
               <FilePath>..\Doc\Readme.txt</FilePath>
+            </File>
+            <File>
+              <FileName>关于USART_I2C_SPI.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Doc\关于USART_I2C_SPI.txt</FilePath>
             </File>
           </Files>
         </Group>

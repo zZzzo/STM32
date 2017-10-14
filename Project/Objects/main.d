@@ -35,3 +35,15 @@
 .\objects\main.o: ..\User\SysTick\SysTick.h
 .\objects\main.o: ..\User\KEY\key_driver.h
 .\objects\main.o: ..\User\RCC\sys_rcc.h
+.\objects\main.o: ..\User\USART\usart_driver.h
+.\objects\main.o: ..\User\ST_string\ST_string.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: ..\User\TIM\tim_driver.h
+.\objects\main.o: ..\User\EXTI\exti_driver.h
+.\objects\main.o: ..\User\I2C\i2c_driver.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\objects\main.o: ..\User\EEPROM\eeprom.h
+.\objects\main.o: ..\User\SPI\spi_driver.h
+.\objects\main.o: ..\User\OLED\oled_driver.h
+.\objects\main.o: ..\User\ADC\adc_driver.h
+.\objects\main.o: ..\User\DHT11\dht11_driver.h

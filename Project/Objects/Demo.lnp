@@ -26,11 +26,21 @@
 ".\objects\stm32f10x_wwdg.o"
 ".\objects\sys_rcc.o"
 ".\objects\systick.o"
+".\objects\st_string.o"
 ".\objects\led_driver.o"
 ".\objects\key_driver.o"
-".\objects\stm32f10x_it.o"
+".\objects\usart_driver.o"
+".\objects\tim_driver.o"
+".\objects\exti_driver.o"
+".\objects\i2c_driver.o"
+".\objects\eeprom.o"
+".\objects\spi_driver_1.o"
+".\objects\oled_driver_1.o"
+".\objects\adc_driver.o"
+".\objects\dht11_driver.o"
 ".\objects\main.o"
---strict --scatter ".\Objects\Demo.sct"
+".\objects\stm32f10x_it.o"
+--library_type=microlib --strict --scatter ".\Objects\Demo.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\Demo.map" -o .\Objects\Demo.axf

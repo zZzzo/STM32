@@ -14,14 +14,14 @@ void SysTick_init(u8 SYSCLK)
 void delay_us(u32 nus)
 {
 	u32 temp;
-	SysTick->LOAD = nus*fac_us;			//延时10us的话就是 10*9 = 90,装载到LOAD寄存器中。
+	SysTick->LOAD = nus*fac_us;			//延时10us的话就是 10*9 = 90,装载到LOAD寄存器中。没有自动装载
 	SysTick->VAL = 0x00;				//计数器清0，因为current字段被手动清零时，LOAD将自动装载到VAL中。
 	SysTick->CTRL = 0x01;				//配置使异常生效，当计数器倒数到0时将发出异常通知。
 	
 	do
 	{
 		temp = SysTick->CTRL;			//时间到了之后，该位将被硬件置1，但被查询后自动清0. 
-	}while((temp&0x01) && ~(temp&(1<<16)));	//查询，这里(temp&0x01)避免定时器被关闭导致无限循环。
+	}while((temp&0x01) && !(temp&(1<<16)));	//查询，这里(temp&0x01)避免定时器被关闭导致无限循环。
 	SysTick->CTRL = 0x00;					//关闭计数器
 	SysTick->VAL = 0x00;					//清空VAL
 }

@@ -35,3 +35,6 @@
 .\objects\key_driver.o: ..\Libaries\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\key_driver.o: ..\User\SysTick\SysTick.h
 .\objects\key_driver.o: ..\User\LED\led_driver.h
+.\objects\key_driver.o: ..\User\USART\usart_driver.h
+.\objects\key_driver.o: ..\User\ST_string\ST_string.h
+.\objects\key_driver.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
